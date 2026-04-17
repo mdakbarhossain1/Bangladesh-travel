@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bangladesh Travel Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">Bangladesh Travel Dataset</p>
+      <h1>Bangladesh Travel Explorer</h1>
+      <p class="subtitle">Browse 140 destinations with route, pricing, travel tips, and visit details.</p>
+      <div class="hero-stats">
+        <div><strong id="totalCount">0</strong><span>Total destinations</span></div>
+        <div><strong id="filteredCount">0</strong><span>Showing now</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <aside class="sidebar">
+      <div class="panel">
+        <h2>Search</h2>
+        <input id="searchInput" type="text" placeholder="Search destination, district, division..." />
+      </div>
+
+      <div class="panel">
+        <h2>Filter</h2>
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter">
+          <option value="all">All categories</option>
+        </select>
+
+        <label for="divisionFilter">Division</label>
+        <select id="divisionFilter">
+          <option value="all">All divisions</option>
+        </select>
+      </div>
+
+      <div class="panel">
+        <h2>Sort</h2>
+        <select id="sortFilter">
+          <option value="name-asc">Name A-Z</option>
+          <option value="name-desc">Name Z-A</option>
+          <option value="rating-desc">Highest rating</option>
+          <option value="budget-asc">Lowest budget</option>
+        </select>
+      </div>
+
+      <div class="panel">
+        <button id="resetBtn" class="reset-btn">Reset filters</button>
+      </div>
+    </aside>
+
+    <section>
+      <div id="results" class="cards"></div>
+    </section>
+  </main>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="card-top">
+        <div>
+          <p class="tag"></p>
+          <h3></h3>
+          <p class="location"></p>
+        </div>
+        <div class="rating"></div>
+      </div>
+      <p class="description"></p>
+      <div class="chips"></div>
+      <div class="meta-grid">
+        <div><span>Best time</span><strong class="best-time"></strong></div>
+        <div><span>Budget/day</span><strong class="budget"></strong></div>
+        <div><span>Travel time</span><strong class="travel-time"></strong></div>
+        <div><span>Main route</span><strong class="route"></strong></div>
+      </div>
+      <details>
+        <summary>More details</summary>
+        <div class="details-grid">
+          <div>
+            <h4>Highlights</h4>
+            <ul class="highlights"></ul>
+          </div>
+          <div>
+            <h4>Activities</h4>
+            <ul class="activities"></ul>
+          </div>
+          <div>
+            <h4>Travel tips</h4>
+            <ul class="tips"></ul>
+          </div>
+          <div>
+            <h4>Nearby places</h4>
+            <ul class="nearby"></ul>
+          </div>
+        </div>
+      </details>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
